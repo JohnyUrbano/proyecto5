@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <link rel="stylesheet" href="stilointerfaz.css">
+    <title>Registrate Social Pogona</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">  
+    
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../static/pogona.png" alt="Logo" width="70" height="50" class="d-inline-block align-text-top">
+          </a>
+          <a class="navbar-brand text-white" href="#"> SOCIAL POGONA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active text-white" aria-current="page" href="/cuentaUsuario">INICIO</a>
+              <a class="nav-link active text-white" aria-current="page" href="#">PERFIL</a>
+              <a class="nav-link active text-white" aria-current="page" href="#">AMIGOS</a>
+              <a class="nav-link active text-white" aria-current="page" href="/imagenes">IMAGENES</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active text-white" aria-current="page" href="/logout">CERRAR SESION</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+</header>
+<body>
+
+  <div class="container-fluid pt-3 p-4">
+    <div class="row shadow-lg p-1 mb-0 bg-white rounded mx-1">
+      <div class="row">
+        <div class="col-sm-4">
+          <p class="text-center fw-bold pt-0 fs-3">
+            <span class="width=200px badge bg-success">BIENVENIDO A TUS IMÁGENES
+
+            </span>
+          </p>
+        </div>
+        <div class="col-sm-4 ">
+          <p class="text-align fw-bold pt-0 fs-3">
+            {% for e in usuario %}                
+              {{e['nombre_usuario']}}{{' '}}{{e['apellido_usuario']}}
+            {% endfor %}
+          </p></div>
+        <div class="col-sm-4">
+          <p class="text-center fw-bold pt-0 fs-3">
+            {% for e in usuario %}
+            <img src="../static/User_with_smile.svg.png" width="70" height="50" alt="">                
+              <!-- {{e['foto_usuario']}} -->
+            {% endfor %}
+        </p></div>
+      </div>
+    </div>
+  </div>
+
+    <div class="container-fluid pt-0 p-4">
+        <div class="row shadow-lg p-2 mb-5 bg-white rounded">
+          <div class="container-fluid col-sm-2 p-2 border bg-light  py-auto mx-1">
+            <p class="text-center fw-bold pt-0 fs-3"><span class="width=200px badge bg-success">MENÚ</span></p>
+              <p class="text-align fw-bold pt-0 fs-3">
+                <div class="list-group">
+                  <a href="javascript:void(0);" class="list-group-item list-group-item-action list-group-item-success" 
+                    onclick="window.open('/cargarimagenes', 'popup', 'top=100, left=100, width=599, height=600, toolbar=NO, resizable=NO, Location=NO, Menubar=NO, Titlebar=No, Status=NO')" 
+                    rel="nofollow">CARGAR
+                  </a>
+                  <a href="/eliminarimagenes" class="list-group-item list-group-item-action list-group-item-success">ELIMINAR</a>
+                  <a href="#" class="list-group-item list-group-item-action list-group-item-success">DESCRIPCIÓN</a>
+                  
+                </p>
+                </div>
+                
+            </p>
+
+          </div>
+          
+          <div class="container-fluid col-sm-6 p-2 pt-3 border bg-light rounded py-5 mx-5">
+            <!-- <h5 style="text-align:center"><span class="badge bg-success">MIS IMÁGENES</span></h5> -->
+            <p class="text-center fw-bold pt-0 fs-3"><span class="badge bg-success">IMÁGENES</span></p>
+            {% block content %}
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="1">
+                        <img class="d-block w-100" src="" alt="">
+                    </div>
+                    {% for e in alumnos %}                
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ url_for('static', filename='') }}{{e['url_imagen']}}" alt="">
+                            <div class="container-fluid col-sm-11 p-2 border bg-white rounded mx-4">
+                              <div class="col-md-8">
+                                {{"Descripción: "}}{{e['descripcion']}}{{' '}}
+                                <p>{{"Comentario: "}}{{e['comentario']}}</p>
+                              </div>
+                              </div> 
+                          </div>
+                        
+                    {% endfor %}
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            {% endblock %}
+          </div>
+          <div class="container-fluid col-sm-3 p-2 border bg-light rounded py-auto mx-1">
+            <p class="text-center fw-bold pt-0 fs-3"><span class="badge bg-success">CHAT</span></p>
+
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action list-group-item-success text-center">USUARIOS ACTIVOS</a>
+            
+              <a href="#" class="list-group-item list-group-item-action list-group-item-success"><button type="button" class="btn btn-success position-relative ">
+                Gleinnys Garcia
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  16+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button></a>
+              <a href="#" class="list-group-item list-group-item-action list-group-item-success"><button type="button" class="btn btn-success position-relative ">
+                Rodrigo Gómez
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  3+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button></a>
+              <a href="#" class="list-group-item list-group-item-action list-group-item-success"><button type="button" class="btn btn-success position-relative ">
+                José Ferrer 
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  1+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button></a>
+              <a href="#" class="list-group-item list-group-item-action list-group-item-success"><button type="button" class="btn btn-success position-relative ">
+                Alejandro Arias
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  9+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button></a>
+              <a href="#" class="list-group-item list-group-item-action list-group-item-success"><button type="button" class="btn btn-success position-relative ">
+                Johny Urbano
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  12+
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button></a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+  
+</div>
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

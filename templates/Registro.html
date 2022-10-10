@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale">
+    <meta http-equiv="X-UA-compatible" content="ie=edge">
+    <link rel="stylesheet" href="stilointerfaz.css">
+    <title>Registro Social Pogona Henrylawsoni</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">  
+
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../static/pogona.png" alt="Logo" width="70" height="50" class="d-inline-block align-text-top">
+          </a>
+          <a class="navbar-brand text-white" href="#"> SOCIAL POGONA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active text-white" aria-current="page" href="#">CERRAR SESION</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+</header>
+<body>
+
+
+    
+        <div class="container-fluid pt-3 p-4">
+            <div class="row shadow-lg p-2 mb-5 bg-white rounded">
+              <div class="container-fluid col-sm-3 p-2 bg-white  py-auto mx-1">
+                <p class="text-center fw-bold pt-0 fs-3"></p>
+                  <p class="text-align fw-bold pt-0 fs-3">
+                    <div class="list-group">
+               
+                    </div>
+                    
+                </p>
+    
+              </div>
+              
+              <div class="container-fluid col-sm-4 p-2 pt-3 border bg-light rounded py-5 mx-5">
+                <!-- <h5 style="text-align:center"><span class="badge bg-success">MIS IMÁGENES</span></h5> -->
+                <p class="text-center fw-bold pt-0 fs-3"><span class="badge bg-success">FORMULARIO DE RESGISTRO</span></p>
+    
+
+                <form action="/usuarios/procesar" method="post" enctype="multipart/form-data">
+                    
+                    <p>
+                    <label for="">Nombres:</label>
+                    <input class="controls" type="text"  name="Nombre" id="Nombre" required placeholder="Ingresa tu nombre"> <br>
+                    </p>
+                    <p>
+                    <label for="">Apellidos:</label>
+                    <input class="controls" type="text" name="Apellido" id="Apellido" required placeholder="Ingresa tu apellido"><br>
+                    </p>
+                    <p>
+                    <label for="">Nombre de usuario:</label>
+                    <input class="controls" type="text" name="Nombre_usu" id="Nombre_usu" required placeholder="Ingresa tu nombre de usuario"><br>
+                    </p>
+                    <p>
+                    <label for="">Correo:</label>
+                    <input class="controls" type="email" name="Correo" id="Correo" required placeholder="Ingresa tu Correo"><br>
+                    </p>
+                    <p>
+                    <label for="">Contraseña:</label>
+                    <input class="controls" type="password" name="Contraseña" id="Contraseña" required minlength="8" maxlength="10" placeholder="Ingresa tu contraseña"><br>
+                    </p>
+                    <p>
+                    <label for="">Confirmar Contraseña:</label>
+                    <input class="controls" type="password" name="Contraseña2" id="Contraseña2" required minlength="8" maxlength="10" placeholder="Ingresa nuevamente tu contraseña"><br>
+                    </p>
+                    <p>
+                    <label for="">Fecha de nacimiento:</label>
+                    <input class="controls" type="date" name="Fecha_de_nacimiento" id="FechaNacimiento" placeholder="Ingresa tu fecha de nacimiento">
+                    </p>
+                    <p><input id="txtLicencia" type="checkbox" required> <label for="txtLicencia"></label><a href="#">Acepto Terminos y condiciones</a></p>
+                    <input type="submit" value="REGISTRAR CUENTA" name="btnGuardar">
+                    <P><a href="/">Ya tengo cuenta</a></P>
+                </form>
+                
+    
+               
+              </div>
+              <div class="container-fluid col-sm-3 p-2  bg-white rounded py-auto mx-1">
+                <p class="text-center fw-bold pt-0 fs-3"></p>
+    
+              
+              </div>
+              
+            </div>
+          </div>
+    
+      
+    </div>
+    </div>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+ 
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">  
+    
+    <nav class="navbar navbar-expand-lg bg-success">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="../static/img/pogona.png" alt="Logo" width="70" height="50" class="d-inline-block align-text-top">
+          </a>
+          <a class="navbar-brand text-white" href="#"> SOCIAL POGONA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active text-white" aria-current="page" href="/cuentaUsuario">INICIO</a>
+           
+            </div>
+            <div class="navbar-nav ms-auto">
+           
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+	
+</head>
+<body>
+    <form action="/usuario/crear" method="post">
+      <div>
+          <label for=""></label>
+        </div>
+        </form>
+    <table width="426" border="1" align="center">
+      <tr>
+        <td width="416"><label for="label">Usuario</label>
+          <input name="nombre_cuenta" type="text" maxlength="50" required></td>
+      </tr>
+      <tr>
+        <td><div></div>
+          <div>
+            <label for="label">Password</label>
+            <input name="clave_cuenta" type="password" maxlength="15" required>
+          </div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><div></div>
+          <div>
+            <label for="label">Confirmar password</label>
+            <input name="txtConfirmar" type="password" maxlength="15" required>
+          </div></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input name="submit" type="submit" value="Registrar"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+<p>&nbsp;</p>
+</body>
+</html>
